@@ -87,7 +87,7 @@ use Classes\Customer;
     <div class="page-wrapper">
         <header>
             <h1>
-                <a href="" class="logo">Customer CRUD</a>
+                <a href="" class="logo">Clientes CRUD</a>
             </h1>
         </header>
 
@@ -114,16 +114,16 @@ use Classes\Customer;
         </p>
 
                 <div class="header2">
-                <button class="add-btn btn-none add-modal" id="open">Add new &plus;</button>
+                <button class="add-btn btn-none add-modal" id="open">Agregar Nuevo &plus;</button>
                 </div>
-                    <h2>List of Customers</h2>
+                    <h2>Lista de clientes</h2>
                     <div class="table-list">
                         <?php
                         $customer = new Customer();
                         if(!empty($customer->all()))
                         {
                             echo '<table>';
-                            echo '<tr class="tr"> <th>Id</th> <th>Name</th><th>Address</th><th>Email</th><th>Phone</th><th colspan="2">Action</th> </tr>';
+                            echo '<tr class="tr"> <th>Id</th> <th>Nombre</th><th>Direccion</th><th>Email</th><th>Phone</th><th colspan="2">Action</th> </tr>';
                             foreach($customer->all() as $customer)
                             {
                                 echo '<tr class="tr">';
@@ -139,7 +139,7 @@ use Classes\Customer;
                             echo '</table>';
                         }
                         else{
-                            echo '<h3> No customers found </h3>';
+                            echo '<h3> No hay Clientes</h3>';
                         }
                         ?>
                     </div>
@@ -156,13 +156,13 @@ use Classes\Customer;
                     <section class="add-section">
                         <div class="add-container">
                             <div class="form form-add">
-                                <h2 class="form-title">Add new Customer</h2>
+                                <h2 class="form-title">Agregar nuevo cliente</h2>
                                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" id="form-add">
                                     <input type="hidden" name="id" id="id" class="input">
-                                    <input type="text" class="input" name="name" id="name" placeholder="Name" required>*
-                                    <input type="text" class="input"  name="address" id="address" placeholder="Address" required>*
+                                    <input type="text" class="input" name="name" id="name" placeholder="Nombre" required>*
+                                    <input type="text" class="input"  name="address" id="address" placeholder="Direccion" required>*
                                     <input type="email" class="input" name="email" id="email" placeholder="Email" required>*
-                                    <input type="number" class="input" name="phone" id="phone" placeholder="Phone Number">
+                                    <input type="number" class="input" name="phone" id="phone" placeholder="Phone">
                                     <button class="btn btn-primary submit" name="bt_add" type="submit">Send</button>
                                 </form>
                             </div>
